@@ -1,0 +1,52 @@
+$ docker build . -t frontend
+[+] Building 5.6s (11/11) FINISHED                                                                       docker:default
+...
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+$ docker run -p 5000:5000 frontend
+ INFO  Accepting connections at http://localhost:5000
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 200 in 38 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/css/main.eaa5d75e.chunk.css
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/js/2.43ca3586.chunk.js
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 304 in 5 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/js/main.667b6e84.chunk.js
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 304 in 8 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 200 in 6 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/css/main.eaa5d75e.chunk.css.map
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 304 in 2 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/js/2.43ca3586.chunk.js.map
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 304 in 7 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/media/toskalogo.c0f35cf0.svg
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 304 in 2 ms
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 GET /static/js/main.667b6e84.chunk.js.map
+ HTTP  3/23/2024 4:48:51 PM 172.17.0.1 Returned 200 in 3 ms
+ HTTP  3/23/2024 4:48:52 PM 172.17.0.1 GET /manifest.json
+ HTTP  3/23/2024 4:48:52 PM 172.17.0.1 Returned 304 in 3 ms
+ HTTP  3/23/2024 4:48:52 PM 172.17.0.1 GET /favicon.ico
+ HTTP  3/23/2024 4:48:52 PM 172.17.0.1 Returned 200 in 4 ms
+
+
+
+
+##########
+$ docker build . -t backend
+...
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+$ docker run -p 8080:8080 backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2024/03/23 - 16:48:52 | 200 |      54.901µs |      172.17.0.1 | GET      "/ping"

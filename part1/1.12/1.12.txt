@@ -1,0 +1,22 @@
+$ docker build . -t example-frontend
+[+] Building 106.8s (11/11) FINISHED
+...
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+$ docker run -p 5000:5000 example-frontend
+ INFO  Accepting connections at http://localhost:5000
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 GET /
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 Returned 200 in 23 ms
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 GET /static/css/main.eaa5d75e.chunk.css
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 GET /static/js/2.43ca3586.chunk.js
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 Returned 200 in 6 ms
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 GET /static/js/main.1be634bd.chunk.js
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 Returned 200 in 10 ms
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 Returned 200 in 6 ms
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 GET /static/media/toskalogo.c0f35cf0.svg
+ HTTP  3/23/2024 3:42:47 PM 172.17.0.1 Returned 200 in 3 ms
+ HTTP  3/23/2024 3:42:48 PM 172.17.0.1 GET /manifest.json
+ HTTP  3/23/2024 3:42:48 PM 172.17.0.1 Returned 200 in 3 ms
+ HTTP  3/23/2024 3:42:48 PM 172.17.0.1 GET /favicon.ico
+ HTTP  3/23/2024 3:42:48 PM 172.17.0.1 Returned 200 in 2 ms

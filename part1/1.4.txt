@@ -1,0 +1,31 @@
+$ docker run -d -it ubuntu sh -c "while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
+21c2aa675981a439c8f354d7bfb90cd3b8bb4bc5f45c1d7d40cc1fe49154976d
+
+$ docker exec 21c2aa sh -c "apt-get update"
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+...
+Reading package lists...
+
+$ docker exec 21c2 sh -c "apt-get -y install curl"
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+...
+done.
+
+$ docker attach 21c2
+helsinki.fi
+Searching..
+Input website:
+<html>
+  <head>
+    <title>301 Moved Permanently</title>
+  </head>
+
+  <body>
+    <h1>Moved Permanently</h1>
+    <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+  </body>
+</html>

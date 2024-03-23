@@ -1,0 +1,6 @@
+$ docker run -d -p 8080:8080 devopsdockeruh/simple-web-service server
+6a314ba621ef695055b41ccd38878d40c25024c4915f13bb0048bc4031967f3a
+
+$ docker attach 6a314
+[GIN] 2024/03/22 - 01:23:04 | 200 |      64.702µs |      172.17.0.1 | GET      "/"
+[GIN] 2024/03/22 - 01:23:05 | 200 |      46.301µs |      172.17.0.1 | GET      "/favicon.ico"

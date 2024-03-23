@@ -1,0 +1,2 @@
+Wrap the project in a docker container, then deploy it using Fly.io:
+Run the command 'fly launch', it will detect Dockerfile automatically , then build and deploy the application.
