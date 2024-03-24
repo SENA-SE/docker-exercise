@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./example-backend
+    image: backend-project
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+    depends_on:
+      - db
+    container_name: backend
+
+  frontend:
+    build: ./example-frontend
+    image: frontend-project
+    container_name: frontend
+
+  redis:
+    image: redis
+    container_name: redis
+  
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./db:/var/lib/postgresql/data
+  
+  nginx:
+      image: nginx
+      volumes:
+          - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      ports:
+          - 80:80
+      container_name: nginx
+
+volumes:
+  db:
+  nginx:
