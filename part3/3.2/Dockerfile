@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY start.sh .
 
-ENTRYPOINT ["sh", "build.sh"]
+ENTRYPOINT ["sh", "script.sh"]
