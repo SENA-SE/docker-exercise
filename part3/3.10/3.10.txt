@@ -1,0 +1,4 @@
+$ docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+express-after    latest    be62885183b0   4 seconds ago    148MB
+express-before   latest    9b28ce7eb239   2 minutes ago    914MB

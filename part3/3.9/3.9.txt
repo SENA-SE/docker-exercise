@@ -1,0 +1,9 @@
+### Before
+$ docker images
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+backend                 latest    1398a488eb8c   11 minutes ago   1.07GB
+
+### After
+$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+backend      latest    240c6d13ea6a   30 seconds ago    19.2MB
